@@ -1,0 +1,6 @@
+{
+  "name": "Dr. Pedro Ribeiro | Advogado Criminalista",
+  "description": "Site oficial do Dr. Pedro Ribeiro, Advogado Criminalista. Defesa penal especializada, prisões em flagrante, audiência de custódia, recursos e apelações.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
