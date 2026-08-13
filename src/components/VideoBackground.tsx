@@ -174,7 +174,7 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
       {/* Main Full-Screen Video Background */}
       <video
         ref={videoRef}
-        src="/videos/Man_adjusting_suit_1080p_202608062135.mp4"
+        src="/videos/meu_novo_video.mp4"
         poster="/videos/poster.jpg"
         muted
         loop
@@ -197,9 +197,7 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
               : 'brightness(0.95) contrast(1.05)'
         }}
       >
-        <source src="/videos/Man_adjusting_suit_1080p_202608062135.mp4" type="video/mp4" />
-        <source src="/videos/man_adjusting_suit.mp4" type="video/mp4" />
-        <source src="/videos/hero-background.mp4" type="video/mp4" />
+        <source src="/videos/meu_novo_video.mp4" type="video/mp4" />
       </video>
 
       {/* Atmospheric Canvas Ray Overlay */}

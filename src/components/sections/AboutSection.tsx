@@ -17,7 +17,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultation }
               <div className="absolute -inset-1 bg-gradient-to-r from-[#C5A059]/40 to-amber-600/30 rounded-xl blur-md opacity-70 group-hover:opacity-100 transition duration-500"></div>
               <div className="relative rounded-xl overflow-hidden border border-[#C5A059]/50 bg-slate-950 shadow-2xl">
                 <img
-                  src="/images/dr-pedro.png"
+                  src="/images/foto-nova-drpedro.jpeg"
                   alt="Dr. Pedro Ribeiro - Advogado Criminalista em Brasília"
                   referrerPolicy="no-referrer"
                   className="w-full h-80 sm:h-96 md:h-[400px] object-cover object-top hover:scale-105 transition-transform duration-500"
