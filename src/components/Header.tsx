@@ -43,13 +43,13 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Logo on top-left */}
             <a href="#hero" className="flex items-center shrink-0 focus:outline-none group">
               <img 
-                src="/logo/logo.png" 
+                src="/logo/logo.webp" 
                 alt="Pedro Ribeiro Advogado" 
                 className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-lg"
                 onError={(e) => {
                   const target = e.currentTarget;
                   target.onerror = null;
-                  target.src = "/logo/logo.png";
+                  target.src = "/logo/logo.webp";
                 }}
               />
             </a>

@@ -22,7 +22,8 @@ export default function App() {
         onOpenDirectLine={() => {}}
       />
 
-      {/* 2. Full-Screen Hero Section Container */}
+      <main>
+        {/* 2. Full-Screen Hero Section Container */}
       <section className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden">
         
         {/* Untouched Infinite Video Background Layer */}
@@ -47,7 +48,9 @@ export default function App() {
       {/* 3. Recreated Page Sections (Sub-Hero Cards, Nossas Vantagens, Áreas de Atuação, Equipe, Depoimentos, Contato, Rodapé) */}
       <LyonexySections
         onOpenConsultation={() => setIsConsultationOpen(true)}
+        onOpenDirectLine={() => {}}
       />
+      </main>
 
       {/* 4. Consultation Modal in Portuguese */}
       <ConsultationModal

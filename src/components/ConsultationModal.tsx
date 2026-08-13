@@ -23,6 +23,11 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    const text = `*Nova Solicitação de Agendamento (Modal)*\n\n*Nome:* ${formData.fullName}\n*E-mail:* ${formData.email}\n*Telefone:* ${formData.phone}\n*Assunto:* ${formData.practiceArea}\n*Resumo da Situação:* ${formData.caseSummary}`;
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/5561986299098?text=${encodedText}`, '_blank');
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);

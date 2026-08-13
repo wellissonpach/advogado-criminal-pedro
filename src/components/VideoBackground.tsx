@@ -29,34 +29,13 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
     if (!ctx) return;
 
     let animationFrameId: number;
+    let isVisible = true;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
+    let beamGrad: CanvasGradient;
 
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', handleResize);
-
-    // Dust particles floating in light beam
-    const dustParticles = Array.from({ length: 40 }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      radius: Math.random() * 1.5 + 0.5,
-      alpha: Math.random() * 0.4 + 0.1,
-      speedX: (Math.random() - 0.5) * 0.2,
-      speedY: -Math.random() * 0.4 - 0.1,
-    }));
-
-    let t = 0;
-
-    const render = () => {
-      t += 0.01;
-      ctx.clearRect(0, 0, width, height);
-
-      // Light Beam Effect focused toward the right 60% (Lawyer & Statue Area)
-      const beamGrad = ctx.createRadialGradient(
+    const createGradient = () => {
+      beamGrad = ctx.createRadialGradient(
         width * 0.72, height * 0.35, 20,
         width * 0.72, height * 0.35, width * 0.55
       );
@@ -74,7 +53,37 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
         beamGrad.addColorStop(0.5, 'rgba(120, 70, 20, 0.06)');
         beamGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
       }
+    };
 
+    createGradient();
+
+    const handleResize = () => {
+      if (!canvas) return;
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      createGradient();
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Dust particles floating in light beam
+    const dustParticles = Array.from({ length: 40 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 1.5 + 0.5,
+      alpha: Math.random() * 0.4 + 0.1,
+      speedX: (Math.random() - 0.5) * 0.2,
+      speedY: -Math.random() * 0.4 - 0.1,
+    }));
+
+    let t = 0;
+
+    const render = () => {
+      if (!isVisible) return;
+
+      t += 0.01;
+      ctx.clearRect(0, 0, width, height);
+
+      // Light Beam Effect focused toward the right 60% (Lawyer & Statue Area)
       ctx.fillStyle = beamGrad;
       ctx.fillRect(0, 0, width, height);
 
@@ -96,11 +105,22 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
       animationFrameId = requestAnimationFrame(render);
     };
 
-    render();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = requestAnimationFrame(render);
+        }
+      });
+    });
+    
+    observer.observe(canvas);
 
     return () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
     };
   }, [lightingMode]);
 
@@ -156,11 +176,10 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
         ref={videoRef}
         src="/videos/Man_adjusting_suit_1080p_202608062135.mp4"
         poster="/videos/poster.jpg"
-        autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="none"
         onCanPlay={handleCanPlay}
         onLoadedData={handleCanPlay}
         onLoadedMetadata={handleCanPlay}
