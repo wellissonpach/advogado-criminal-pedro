@@ -23,19 +23,13 @@ export const HeroContent: React.FC<HeroContentProps> = ({
 
           {/* Main Title - Pure White text with Gold Highlight */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] font-dm tracking-tight">
-            Estou aqui para lutar pelos seus direitos com{' '}
-            <span className="text-[#C5A059]">ética</span>,{' '}
-            <span className="text-[#C5A059]">integridade</span> e{' '}
-            <span className="text-[#C5A059]">profissionalismo</span>
+            Advogado Criminalista em <span className="text-[#C5A059]">Brasília</span>
           </h1>
 
           {/* Paragraph Description - Pure White Text */}
           <div className="space-y-3 text-white/90 text-sm sm:text-base lg:text-lg font-normal leading-relaxed font-dm max-w-xl">
             <p>
-              Com uma paixão inabalável pela advocacia criminal, através do direito busco incansavelmente pela justiça e por combater as opressões sobrepostas aos menos favorecidos.
-            </p>
-            <p>
-              Acredito piamente que o direito a defesa é fundamental para a manutenção da justiça.
+              Atuação estratégica e personalizada na defesa dos seus direitos.
             </p>
           </div>
 
