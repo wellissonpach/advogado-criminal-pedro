@@ -174,12 +174,13 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
       {/* Main Full-Screen Video Background */}
       <video
         ref={videoRef}
-        src="/videos/meu_novo_video.mp4"
+        src="/videos/meu_novo_video 2.mp4"
         poster="/videos/poster.jpg"
         muted
         loop
         playsInline
-        preload="none"
+        autoPlay
+        preload="metadata"
         onCanPlay={handleCanPlay}
         onLoadedData={handleCanPlay}
         onLoadedMetadata={handleCanPlay}
@@ -197,7 +198,7 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
               : 'brightness(0.95) contrast(1.05)'
         }}
       >
-        <source src="/videos/meu_novo_video.mp4" type="video/mp4" />
+        <source src="/videos/meu_novo_video 2.mp4" type="video/mp4" />
       </video>
 
       {/* Atmospheric Canvas Ray Overlay */}
