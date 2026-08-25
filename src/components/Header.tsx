@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Instagram } from 'lucide-react';
 
 interface HeaderProps {
   onOpenConsultation: () => void;
@@ -62,8 +62,19 @@ export const Header: React.FC<HeaderProps> = ({
               <a href="#contato" className="hover:text-[#C5A059] transition-colors">CONTATO</a>
             </nav>
 
-            {/* Action CTA Button */}
-            <div className="hidden md:flex items-center">
+            {/* Action CTA Button & Instagram Link */}
+            <div className="hidden md:flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/pedro.ribeiroadv/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram @pedro.ribeiroadv"
+                title="Siga @pedro.ribeiroadv no Instagram"
+                className="p-2.5 rounded border border-white/20 bg-slate-900/60 hover:bg-[#C5A059]/10 hover:border-[#C5A059] text-white hover:text-[#C5A059] transition-all duration-300 flex items-center justify-center group"
+              >
+                <Instagram className="w-4 h-4 transition-transform group-hover:scale-110" />
+              </a>
+
               <button
                 onClick={onOpenConsultation}
                 className="bg-[#C5A059] hover:bg-[#b08d48] text-slate-950 font-dm font-bold text-xs tracking-wider uppercase px-5 py-2.5 rounded transition-all duration-300 cursor-pointer shadow-lg flex items-center gap-2"
@@ -75,6 +86,16 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Mobile Toggle Button */}
             <div className="flex md:hidden items-center gap-2">
+              <a
+                href="https://www.instagram.com/pedro.ribeiroadv/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram @pedro.ribeiroadv"
+                className="p-1.5 rounded border border-white/20 bg-slate-900/60 text-white hover:text-[#C5A059] transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+
               <button
                 onClick={onOpenConsultation}
                 className="bg-[#C5A059] text-slate-950 font-dm font-bold text-[11px] tracking-wider uppercase px-3 py-1.5 rounded shadow-sm"
@@ -128,7 +149,18 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
           </div>
 
-          <div className="pt-2">
+          <div className="pt-2 space-y-2">
+            <a
+              href="https://www.instagram.com/pedro.ribeiroadv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full bg-slate-900 border border-white/20 hover:border-[#C5A059] text-white hover:text-[#C5A059] font-dm font-semibold text-xs uppercase py-2.5 rounded flex items-center justify-center gap-2 tracking-wider transition-colors"
+            >
+              <Instagram className="w-4 h-4 text-[#C5A059]" />
+              <span>@pedro.ribeiroadv no Instagram</span>
+            </a>
+
             <button
               onClick={() => {
                 setMobileMenuOpen(false);

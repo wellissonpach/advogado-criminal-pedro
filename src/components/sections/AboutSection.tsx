@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Scale } from 'lucide-react';
+import { ArrowRight, Scale, Instagram } from 'lucide-react';
 
 interface AboutSectionProps {
   onOpenConsultation: () => void;
@@ -12,7 +12,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultation }
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
           {/* Foto do Dr. Pedro Ribeiro */}
-          <div className="md:col-span-5 lg:col-span-4 flex justify-center">
+          <div className="md:col-span-5 lg:col-span-4 flex flex-col items-center">
             <div className="relative group w-full max-w-xs md:max-w-none">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#C5A059]/40 to-amber-600/30 rounded-xl blur-md opacity-70 group-hover:opacity-100 transition duration-500"></div>
               <div className="relative rounded-xl overflow-hidden border border-[#C5A059]/50 bg-slate-950 shadow-2xl">
@@ -29,6 +29,17 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultation }
                 </div>
               </div>
             </div>
+
+            {/* Link direto do Instagram abaixo da foto */}
+            <a
+              href="https://www.instagram.com/pedro.ribeiroadv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3.5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/80 border border-white/15 hover:border-[#C5A059] text-white/80 hover:text-[#C5A059] text-xs font-medium transition-all group"
+            >
+              <Instagram className="w-3.5 h-3.5 text-[#C5A059] transition-transform group-hover:scale-110" />
+              <span>@pedro.ribeiroadv</span>
+            </a>
           </div>
 
           {/* Conteúdo & Biografia */}
@@ -61,14 +72,24 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenConsultation }
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={onOpenConsultation}
-                className="bg-[#C5A059] hover:bg-[#b08d48] text-slate-950 font-bold text-xs uppercase tracking-wider px-6 sm:px-8 py-3.5 rounded inline-flex items-center gap-2 transition-all cursor-pointer shadow-lg w-full sm:w-auto justify-center"
+                className="bg-[#C5A059] hover:bg-[#b08d48] text-slate-950 font-bold text-xs uppercase tracking-wider px-6 sm:px-8 py-3.5 rounded inline-flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg w-full sm:w-auto"
               >
                 <span>Falar Diretamente com Pedro Ribeiro</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+
+              <a
+                href="https://www.instagram.com/pedro.ribeiroadv/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-white/25 hover:border-[#C5A059] bg-slate-950/60 hover:bg-[#C5A059]/10 text-white hover:text-[#C5A059] font-bold text-xs uppercase tracking-wider px-5 py-3.5 rounded inline-flex items-center justify-center gap-2 transition-all w-full sm:w-auto"
+              >
+                <Instagram className="w-4 h-4 text-[#C5A059]" />
+                <span>Ver Perfil no Instagram</span>
+              </a>
             </div>
           </div>
 
