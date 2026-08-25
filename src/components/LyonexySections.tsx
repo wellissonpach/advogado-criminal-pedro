@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Calendar, MessageSquare, Send } from 'lucide-react';
+import { ArrowRight, Calendar, MessageSquare, Send, Instagram } from 'lucide-react';
 import { StrategySection } from './sections/StrategySection';
 import { PracticeAreasSection } from './sections/PracticeAreasSection';
 import { AboutSection } from './sections/AboutSection';
@@ -82,13 +82,25 @@ export const LyonexySections: React.FC<LyonexySectionsProps> = ({ onOpenConsulta
               <p className="text-xs text-white/80 leading-relaxed">
                 Atendimento presencial ou online com total sigilo, agilidade e segurança jurídica.
               </p>
-              <a
-                href="#contato"
-                className="inline-flex items-center gap-1.5 text-xs text-white font-bold pt-2 hover:text-[#C5A059] uppercase tracking-wider cursor-pointer transition-colors"
-              >
-                <span>Falar Conosco</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              <div className="flex items-center gap-4 pt-2">
+                <a
+                  href="#contato"
+                  className="inline-flex items-center gap-1.5 text-xs text-white font-bold hover:text-[#C5A059] uppercase tracking-wider cursor-pointer transition-colors"
+                >
+                  <span>Falar Conosco</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+                <span className="text-white/30">•</span>
+                <a
+                  href="https://www.instagram.com/pedro.ribeiroadv/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-[#C5A059] font-semibold hover:underline"
+                >
+                  <Instagram className="w-3.5 h-3.5" />
+                  <span>Instagram</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -234,8 +246,8 @@ export const LyonexySections: React.FC<LyonexySectionsProps> = ({ onOpenConsulta
       </section>
 
       {/* 12. Footer */}
-      <footer className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 border-t border-white/10 text-center text-xs text-white/70 space-y-4">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <footer className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 border-t border-white/10 text-center text-xs text-white/70 space-y-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <a href="#hero" className="flex items-center focus:outline-none">
             <img 
               src="/logo/logo.webp" 
@@ -248,18 +260,41 @@ export const LyonexySections: React.FC<LyonexySectionsProps> = ({ onOpenConsulta
               }}
             />
           </a>
+
           <div className="flex items-center flex-wrap justify-center gap-4 sm:gap-6 text-white/80 uppercase tracking-wider text-[11px]">
-            <a href="#hero" className="hover:text-[#C5A059]">Início</a>
-            <a href="#sobre" className="hover:text-[#C5A059]">Sobre o Advogado</a>
-            <a href="#areas" className="hover:text-[#C5A059]">Serviços</a>
-            <a href="#contato" className="hover:text-[#C5A059]">Contato</a>
+            <a href="#hero" className="hover:text-[#C5A059] transition-colors">Início</a>
+            <a href="#sobre" className="hover:text-[#C5A059] transition-colors">Sobre o Advogado</a>
+            <a href="#areas" className="hover:text-[#C5A059] transition-colors">Serviços</a>
+            <a href="#contato" className="hover:text-[#C5A059] transition-colors">Contato</a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.instagram.com/pedro.ribeiroadv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-white/20 hover:border-[#C5A059] text-white hover:text-[#C5A059] text-xs font-semibold transition-all group"
+            >
+              <Instagram className="w-4 h-4 text-[#C5A059] group-hover:scale-110 transition-transform" />
+              <span>@pedro.ribeiroadv</span>
+            </a>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-2 text-white/40">
+
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-4 border-t border-white/5 text-white/40">
           <p className="text-[11px]">
             © 2026 Pedro Ribeiro Advogado. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/pedro.ribeiroadv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#C5A059]/80 hover:text-[#C5A059] text-[11px] hover:underline"
+            >
+              Instagram Oficial
+            </a>
+            <span>•</span>
             <span>OAB/DF 68.705</span>
           </div>
         </div>
@@ -268,4 +303,5 @@ export const LyonexySections: React.FC<LyonexySectionsProps> = ({ onOpenConsulta
     </div>
   );
 };
+
 

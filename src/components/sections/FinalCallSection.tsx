@@ -1,12 +1,12 @@
 import React from 'react';
-import { ArrowRight, Phone } from 'lucide-react';
+import { ArrowRight, Instagram } from 'lucide-react';
 
 interface FinalCallSectionProps {
   onOpenConsultation: () => void;
   onOpenDirectLine: () => void;
 }
 
-export const FinalCallSection: React.FC<FinalCallSectionProps> = ({ onOpenConsultation, onOpenDirectLine }) => {
+export const FinalCallSection: React.FC<FinalCallSectionProps> = ({ onOpenConsultation }) => {
   return (
     <section id="contato" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
       <div className="bg-gradient-to-b from-slate-900 to-slate-950 border border-[#C5A059]/40 p-10 sm:p-14 rounded-2xl text-center shadow-2xl relative overflow-hidden">
@@ -33,6 +33,16 @@ export const FinalCallSection: React.FC<FinalCallSectionProps> = ({ onOpenConsul
               <span>Agendar Atendimento</span>
               <ArrowRight className="w-4 h-4" />
             </button>
+
+            <a
+              href="https://www.instagram.com/pedro.ribeiroadv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/30 hover:border-[#C5A059] bg-slate-950/70 hover:bg-[#C5A059]/10 text-white hover:text-[#C5A059] font-bold text-xs sm:text-sm uppercase tracking-wider px-7 py-4 rounded inline-flex items-center justify-center gap-2 transition-all w-full sm:w-auto"
+            >
+              <Instagram className="w-4 h-4 text-[#C5A059]" />
+              <span>Siga no Instagram</span>
+            </a>
           </div>
         </div>
       </div>
