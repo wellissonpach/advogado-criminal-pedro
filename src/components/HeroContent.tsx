@@ -23,7 +23,7 @@ export const HeroContent: React.FC<HeroContentProps> = ({
 
           {/* Main Title - Pure White text with Gold Highlight */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] font-dm tracking-tight">
-            Advogado Criminalista em <span className="text-[#C5A059]">Brasília</span>
+            Advogado <span className="text-[#C5A059]">Criminalista</span>
           </h1>
 
           {/* Paragraph Description - Pure White Text */}

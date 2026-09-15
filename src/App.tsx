@@ -5,6 +5,7 @@ import { CinematicOverlay } from './components/CinematicOverlay';
 import { HeroContent } from './components/HeroContent';
 import { LyonexySections } from './components/LyonexySections';
 import { ConsultationModal } from './components/ConsultationModal';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { AmbientLightingMode } from './types';
 
 export default function App() {
@@ -57,6 +58,9 @@ export default function App() {
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
       />
+
+      {/* 5. Floating Metallic Gold WhatsApp Button */}
+      <FloatingWhatsApp />
 
     </div>
   );
