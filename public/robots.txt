@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pedroribeiroadv.com.br/sitemap.xml
+Sitemap: https://www.pedroribeiroadv.com.br/sitemap.xml
